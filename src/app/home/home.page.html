@@ -30,14 +30,22 @@
       <ion-label position="floating">Longitude:</ion-label>
       <ion-input type="text" placeholder="Longitude de la ville" [(ngModel)]="firebaseData.lng"></ion-input>
     </ion-item>
-    
+
     <ion-item>
       <ion-label position="floating">Image:</ion-label>
       <ion-input type="text" placeholder="Image de la ville" [(ngModel)]="firebaseData.img"></ion-input>
     </ion-item>
 
+    <div class="ion-padding">
+      <ion-button expand="block" (click)="addFirebase()">Ajouter</ion-button>
+    </div>
+  </div>
 
-
+  <div *ngFor="let city of cities | async">
+    <ion-card [routerLink]="['/','map',city.name,city.lat,city.lng]" >
+      <img [src]="city.img" alt="">
+      <h3>{{city.name}}</h3>
+    </ion-card>
   </div>
 
 </ion-content>

@@ -10,13 +10,13 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCtyAvbsX2NSdxa88rAN0WgXD3JUadk5fo',
-  authDomain: 'airbnb-43b6d.firebaseapp.com',
-  projectId: 'airbnb-43b6d',
-  storageBucket: 'airbnb-43b6d.appspot.com',
-  messagingSenderId: '1077470327527',
-  appId: '1:1077470327527:web:ee43252c5adc8104fc2842',
-  measurementId: 'G-9K4L5J7Z0L'
+  apiKey: 'AIzaSyD3Y16WqwGnHuovaY-eqBGfaKOagFpDkFk',
+  authDomain: 'airbnmap-b8e11.firebaseapp.com',
+  projectId: 'airbnmap-b8e11',
+  storageBucket: 'airbnmap-b8e11.appspot.com',
+  messagingSenderId: '806767130318',
+  appId: '1:806767130318:web:4285cec5e6d07ba803429f',
+  measurementId: 'G-5MDS70QVRB'
 };
 
 @NgModule({
