@@ -5,7 +5,7 @@
     </ion-buttons >
     <ion-title>{{currentCity.name}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click) ="openAddModal()">
         <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>

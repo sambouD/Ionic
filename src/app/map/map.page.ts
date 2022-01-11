@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { ActivatedRoute } from '@angular/router';
 import { Environment, GoogleMap, GoogleMaps, GoogleMapsMapTypeId } from '@ionic-native/google-maps';
-import { Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
+import { AddPage } from '../add/add.page';
 
 @Component({
   selector: 'app-map',
@@ -19,7 +20,8 @@ map: GoogleMap;
   constructor(
     public afDB: AngularFireDatabase,
     public route: ActivatedRoute,
-    private platform: Platform
+    private platform: Platform,
+    public modalController: ModalController
   ) {
     this.currentCity.name = this.route.snapshot.paramMap.get('name'); // Recupere le nom de la ville
     this.currentCity.lat = parseFloat(this.route.snapshot.paramMap.get('lat')); // Recupere la latitude de la ville
@@ -51,6 +53,20 @@ map: GoogleMap;
       }
     });
 
+  }
+
+  async openAddModal(){
+    const modal = await this.modalController.create({
+      component: AddPage,
+      componentProps: {
+        lat: '45.5658',
+        lng: '-73.5579'
+        // lat: this.map.getCameraPosition().target.lat,
+        // lng: this.map.getCameraPosition().target.lng
+      }
+    });
+
+    return await modal.present();
   }
 
 
